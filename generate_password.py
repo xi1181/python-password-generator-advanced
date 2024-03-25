@@ -32,3 +32,7 @@ def gui_generate_password(web, id, incl_u, incl_l, incl_sc, incl_n, password_len
     pwd = ""
     for i in range (password_len):
         pwd += random.choice(char)
+    with open("passwords.txt", "a") as file:
+        file.write(f"Website:{web}, Login ID: {id}, Password: {pwd}\n")
+                   
+    messagebox.showinfo("Generated Password", f"Your Password: {pwd}")

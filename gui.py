@@ -1,4 +1,5 @@
 import tkinter as tk
+from generate_password import gui_generate_password
 
 window = tk.Tk()
 window.title("Password Generator")
@@ -40,6 +41,8 @@ def on_button_clicked():
     include_specialchar = specialchar_var.get()
     include_numbers= numbers_var.get()
     passlen = passlen_var.get()
+
+    gui_generate_password(website, login_id, include_uppercase, include_lowercase, include_specialchar, include_numbers, passlen)
 
 generate_button = tk.Button(window, text= "Generate Password", command = on_button_clicked)
 generate_button.pack()
